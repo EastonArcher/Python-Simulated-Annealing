@@ -1,2 +1,2 @@
 # 8 Queens Simulated Annealing
-The eight queens puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other; thus, a solution requires that no two queens share the same row, column, or diagonal.
+This Python code implements the Simulated Annealing algorithm to solve the classic Eight Queens Puzzle. The puzzle involves placing eight chess queens on an 8×8 chessboard such that no two queens threaten each other; they cannot share the same row, column, or diagonal.
