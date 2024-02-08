@@ -18,6 +18,6 @@ The Eight Queens Puzzle requires finding a configuration of queen placements on 
 
 ## Running the Code
 To run the code:
-```py
+```
 python <filename.py>
 ```
