@@ -21,3 +21,4 @@ To run the code:
 ```
 python <simulated-annealing.py>
 ```
+The initial board state and the solution (if found) will be printed along with the elapsed time.
