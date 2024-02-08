@@ -15,3 +15,6 @@ The Eight Queens Puzzle requires finding a configuration of queen placements on 
 * Initializes and runs the Simulated Annealing algorithm.
 * 'run()': Runs the Simulated Annealing loop to find a solution.
 * 'getElapsedTime()': Calculates and returns the elapsed time during execution.
+
+## Running the Code
+To run the code:
