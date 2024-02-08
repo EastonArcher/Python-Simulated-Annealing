@@ -10,8 +10,8 @@ The Eight Queens Puzzle requires finding a configuration of queen placements on 
 * 'calculateCost()': Calculates the number of queen conflicts (threats) on the board.
 * 'calculateCostWithQueens(queens)': Static method to calculate the number of conflicts given a set of queen positions.
 * 'toString(queens)': Static method to convert queen positions to a string representation.
-* 
+  
 ### 'SimulatedAnnealing'
 * Initializes and runs the Simulated Annealing algorithm.
-* run(): Runs the Simulated Annealing loop to find a solution.
-* getElapsedTime(): Calculates and returns the elapsed time during execution.
+* 'run()': Runs the Simulated Annealing loop to find a solution.
+* 'getElapsedTime()': Calculates and returns the elapsed time during execution.
