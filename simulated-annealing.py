@@ -1,7 +1,6 @@
 from datetime import datetime
 import random
 import math
-import decimal
 
 class Board:
     def __init__(self, queen_count=8):
@@ -10,7 +9,9 @@ class Board:
 
     def reset(self):
         """Reset the board with random queen positions."""
-        self.queens = [random.randint(0, self.queen_count - 1) for _ in range(self.queen_count)]
+        self.queens = [-1 for _ in range(self.queen_count)]
+        for i in range(self.queen_count):
+            self.queens[i] = random.randint(0, self.queen_count - 1)
 
     def calculateCost(self):
         """Calculate the number of queen conflicts (threats) on the board."""
@@ -34,33 +35,45 @@ class Board:
 
     @staticmethod
     def toString(queens):
-        """Convert queen positions to a printable string."""
+        """Convert queen positions to a string representation with 0s and 1s."""
         board_string = ""
         for row, col in enumerate(queens):
-            board_string += "(%s, %s)\n" % (row, col)
+            for i in range(len(queens)):
+                if i == col:
+                    board_string += "1"
+                else:
+                    board_string += "0"
+            board_string += "\n"
         return board_string
 
 class SimulatedAnnealing:
     def __init__(self, board):
         self.elapsedTime = 0
         self.board = board
-        self.temperature = 4000
+        self.temperature = 4.0  # Adjusted temperature value
         self.sch = 0.99
         self.startTime = datetime.now()
 
     def run(self):
-        board_queens = self.board.queens[:]  # Make a copy of initial board state
+        board = self.board
+        board_queens = self.board.queens[:]
         solutionFound = False
 
-        for k in range(170000):  # Reduced range to improve efficiency
+        # Simulated Annealing loop
+        for _ in range(170000):
+            # Update temperature
             self.temperature *= self.sch
-            board = deepcopy(self.board)  # Create a new board instance
+            # Reset board to random state
             board.reset()
             successor_queens = board.queens[:]
+            # Calculate difference in cost between successor and current state
             dw = Board.calculateCostWithQueens(successor_queens) - Board.calculateCostWithQueens(board_queens)
-            exp = math.exp(-dw * self.temperature)  # Removed unnecessary decimal.Decimal
+            # Calculate acceptance probability
+            exp = math.exp(-dw * self.temperature)
+            # If better or accepted by probability, update current state
             if dw > 0 or random.uniform(0, 1) < exp:
                 board_queens = successor_queens[:]
+            # If solution found, print and exit loop
             if Board.calculateCostWithQueens(board_queens) == 0:
                 print("Solution:")
                 print(Board.toString(board_queens))
@@ -69,7 +82,8 @@ class SimulatedAnnealing:
                 solutionFound = True
                 break
 
-        if not solutionFound:  # Simplified condition
+        # If no solution found, print elapsed time
+        if not solutionFound:
             self.elapsedTime = self.getElapsedTime()
             print("Unsuccessful, Elapsed Time: %sms" % (str(self.elapsedTime)))
 
@@ -81,7 +95,9 @@ class SimulatedAnnealing:
         return elapsedTime
 
 if __name__ == '__main__':
+    # Initialize board and print initial state
     board = Board()
     print("Board:")
-    print(board)
+    print(Board.toString(board.queens))
+    # Run simulated annealing algorithm
     SimulatedAnnealing(board).run()
