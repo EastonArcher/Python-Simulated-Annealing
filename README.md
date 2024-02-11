@@ -22,6 +22,3 @@ To run the code:
 python <simulated-annealing.py>
 ```
 The initial board state and the solution (if found) will be printed along with the elapsed time.
-
-### Dependencies
-This code uses Python's built-in 'datetime', 'random', and m'ath modules'. No external dependencies are required.
