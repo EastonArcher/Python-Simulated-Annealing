@@ -101,4 +101,3 @@ if __name__ == '__main__':
     print(Board.toString(board.queens))
     # Run simulated annealing algorithm
     SimulatedAnnealing(board).run()
-
