@@ -28,4 +28,3 @@ The initial board state and the solution (if it is found) will be printed along 
 <br>
 <br>
 ***(School Project)***
-
