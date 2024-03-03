@@ -1,4 +1,4 @@
-# 8 Queens Problem ♟
+ # 8 Queens Problem ♟
 This code implements the Simulated Annealing algorithm to solve the Eight Queens Puzzle. The puzzle involves placing eight chess queens on an 8×8 chessboard such that no two queens threaten each other; they cannot share the same row, column, or diagonal.
 
 ## Problem Description 
@@ -28,4 +28,5 @@ The initial board state and the solution (if it is found) will be printed along 
 <br>
 <br>
 ***(School Project)***
+
 
