@@ -4,7 +4,7 @@ This code implements the Simulated Annealing algorithm to solve the Eight Queens
 ## Simulated Annealing
 Simulated Annealing is a probabilistic optimization algorithm inspired by the process of annealing in metallurgy. It starts with an initial solution and iteratively explores neighboring solutions, gradually decreasing the probability of accepting worse solutions as it progresses. This allows the algorithm to escape local optima and converge towards a global optimum.
 
-### 'Board'
+### ```Board```
 - Initializes and represents the chessboard.
 * ```reset()```: Resets the board with random queen positions.
 * ```calculateCost()```: Calculates the number of queen conflicts (threats) on the board.
