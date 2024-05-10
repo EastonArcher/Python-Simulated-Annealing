@@ -19,7 +19,7 @@ Simulated Annealing is a probabilistic optimization algorithm inspired by the pr
 ## Running the Code
 To run the code:
 ```
-python <simulated-annealing.py>
+python simulated-annealing.py
 ```
 The initial board state and the solution (if it is found) will be printed along with the elapsed time.
 <br>
