@@ -13,8 +13,8 @@ Simulated Annealing is a probabilistic optimization algorithm inspired by the pr
   
 ### 'SimulatedAnnealing'
 * Initializes and runs the Simulated Annealing algorithm.
-* 'run()': Runs the Simulated Annealing loop to find a solution.
-* 'getElapsedTime()': Calculates and returns the elapsed time during execution.
+* ```run()```: Runs the Simulated Annealing loop to find a solution.
+* ```getElapsedTime()```: Calculates and returns the elapsed time during execution.
 
 ## Running the Code
 To run the code:
